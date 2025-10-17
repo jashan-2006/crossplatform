@@ -74,17 +74,18 @@ const CustomInput = forwardRef(({
                 focused && styles.inputContainerFocused,
                 error && styles.inputContainerError,
             ]}>
-                {leftIcon && (
+                {leftIcon &&
                     <Icon
                         name={leftIcon}
                         size={24}
                         color={focused ? Colors.primary : Colors.text.secondary}
                         style={styles.leftIcon}
                     />
-                )}
+                }
                 <Animated.Text style={labelStyle}>
                     {label}
                 </Animated.Text>
+
                 <TextInput
                     ref={ref}
                     style={[
@@ -106,6 +107,7 @@ const CustomInput = forwardRef(({
                     accessibilityHint={error ? `${label} field has an error: ${error}` : `${label} input field`}
                     {...props}
                 />
+
                 {secureTextEntry && (
                     <TouchableOpacity
                         style={styles.rightIcon}
@@ -121,6 +123,7 @@ const CustomInput = forwardRef(({
                         />
                     </TouchableOpacity>
                 )}
+
                 {rightIcon && !secureTextEntry && (
                     <TouchableOpacity
                         style={styles.rightIcon}
@@ -136,8 +139,9 @@ const CustomInput = forwardRef(({
                     </TouchableOpacity>
                 )}
             </View>
+
             {error && (
-                <Text style={styles.errorText} accessible={true}>
+                <Text style={styles.errorText} accessible={true} accessibilityRole="alert">
                     {error}
                 </Text>
             )}
@@ -146,12 +150,13 @@ const CustomInput = forwardRef(({
 });
 
 const styles = StyleSheet.create({
-    
+    container: {
+        marginBottom: Spacing.md,
+    },
     inputContainer: {
         position: 'relative',
         borderWidth: 1,
-        borderColor: Colors.b
-        order,
+        borderColor: Colors.border,
         borderRadius: 12,
         backgroundColor: Colors.surface,
         minHeight: 56,

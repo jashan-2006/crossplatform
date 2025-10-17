@@ -16,6 +16,7 @@ export const ContactProvider = ({children}) => {
     const [contacts, setContacts] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    // Load contacts from storage on app start
     useEffect(() => {
         loadContacts();
     }, []);
@@ -26,12 +27,13 @@ export const ContactProvider = ({children}) => {
             if (stored) {
                 setContacts(JSON.parse(stored));
             } else {
+                // Initialize with sample data
                 setContacts(sampleContacts);
                 await AsyncStorage.setItem('contacts', JSON.stringify(sampleContacts));
             }
         } catch (error) {
             console.error('Failed to load contacts:', error);
-            setContacts(sampleContacts);
+            setContacts(sampleContacts); // Fallback to sample data
         } finally {
             setLoading(false);
         }

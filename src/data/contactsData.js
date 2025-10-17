@@ -67,6 +67,7 @@ export const formatContactName = (contact) => {
 
 export const searchContacts = (contacts, searchTerm) => {
     if (!searchTerm.trim()) return contacts;
+
     const term = searchTerm.toLowerCase();
     return contacts.filter(contact =>
         contact.firstName.toLowerCase().includes(term) ||
