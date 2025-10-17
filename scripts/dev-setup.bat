@@ -1,0 +1,9 @@
+@echo off
+echo Setting up development environment...  
+call npm install  
+echo Installing iOS dependencies...  
+cd ios  
+call pod install  
+cd ..  
+echo Starting Metro bundler...  
+call npx react-native start --reset-cache
