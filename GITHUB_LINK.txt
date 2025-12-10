@@ -1,0 +1,10 @@
+Repository URL: [your-github-repo-url]
+Student Name: Jashandeep Singh
+Student ID: n01736561
+Lab: CPAN 213 - Lab 9
+Date: December 10 , 2025
+Simple Data Persistence Practice
+- Store and retrieve data using AsyncStorage
+- Save user preferences locally
+- Implement a simple favorites/bookmarks feature
+- Handle basic data persistence patterns    
